@@ -32,7 +32,7 @@ npm install --save easycp
 ```js
 import easycp from 'easycp';
 
-function async echoHi() {
+async function echoHi() {
   const process = await easycp('echo hello world');
   return process;
 }
@@ -43,7 +43,7 @@ echoHi();
 ```js
 import easycp from 'easycp';
 
-function async echoHi() {
+async function echoHi() {
   const process = await easycp('echo', ['hello', 'world'], { stderr: false });
   return process;
 }
