@@ -30,25 +30,22 @@ npm install --save easycp
 ## Usage
 
 ```js
-import easycp from 'easycp';
+import easycp, { readcp, silentcp } from 'easycp';
 
-async function echoHi() {
-  const process = await easycp('echo hello world');
-  return process;
-}
+// streams to stdout and process returned
+easycp('echo hello world').then(process => console.log(process)); // [object Object]
 
-echoHi();
-```
+// alternative syntax
+easycp('echo', ['hello', 'world']).then(process => console.log(process)); // [object Object]
 
-```js
-import easycp from 'easycp';
+// streams to stdout (stderr silenced) and process returned
+easycp('echo', ['hello', 'world'], { stderr: false }).then(process => console.log(process)); // [object Object]
 
-async function echoHi() {
-  const process = await easycp('echo', ['hello', 'world'], { stderr: false });
-  return process;
-}
+// stream silenced and process returned
+silentcp('echo hello world').then(process => console.log(process)); // [object Object]
 
-echoHi();
+// stream silenced and returned as result
+readcp('echo hello world').then(result => console.log(result)); // hello world
 ```
 
 
