@@ -9,9 +9,7 @@
     "url": "https://jam.jamrizzi.com"
   },
   "main": "lib/index.js",
-  "files": [
-    "lib"
-  ],
+  "files": ["lib"],
   "scripts": {
     "build": "npm run clean && npm run test && babel src -d lib",
     "clean": "rm -rf lib",
@@ -52,7 +50,8 @@
   "engines": {
     "node": ">= 4.0.0"
   },
-  "eslintIgnore": [
-    "lib"
-  ]
+  "eslintIgnore": ["lib"],
+  "jest": {
+    "testMatch": ["**/tests/**/*.js"]
+  }
 }
