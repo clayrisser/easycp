@@ -38,13 +38,9 @@ node_modules
 *~
 .\#*
 \#*\#
-idea/
-
-# Editor
-\#*\#
-.\#*
-*~
 .idea/
 
 # Application
-lib/
+/lib
+/docs/build
+/env
