@@ -1,6 +1,6 @@
 CWD = $(shell pwd)
 SOURCEDIR=docs
-BUILDDIR=$(SOURCEDIR)/build
+BUILDDIR=build
 SPHINXOPTS=
 SPHINXPROJ=easycp
 
@@ -10,7 +10,7 @@ build: env clean html man latexpdf
 
 .PHONY: serve
 serve: env clean html
-	@cd $(BUILDDIR)/html && $(CWD)/env/bin/python3 -m http.server
+	@cd $(SOURCEDIR)/$(BUILDDIR)/html && $(CWD)/env/bin/python3 -m http.server
 
 .PHONY: help
 help:
@@ -30,4 +30,4 @@ freeze:
 
 .PHONY: Makefile
 %: Makefile
-	@env/bin/sphinx-build -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@cd $(SOURCEDIR) && $(CWD)/env/bin/sphinx-build -M $@ ./ "$(BUILDDIR)" $(SPHINXOPTS) $(O)

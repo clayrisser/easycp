@@ -20,7 +20,7 @@ html_theme = 'sphinx_rtd_theme'
 
 htmlhelp_basename = 'easycpdoc'
 
-js_source_path = './src'
+js_source_path = '../src'
 
 language = None
 
