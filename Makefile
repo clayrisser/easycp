@@ -14,7 +14,7 @@ serve: env clean html
 
 .PHONY: help
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINXBUILD) -M help $(SOURCEDIR) $(BUILDDIR) $(SPHINXOPTS) $(O)
 
 env:
 	@virtualenv env
@@ -30,4 +30,5 @@ freeze:
 
 .PHONY: Makefile
 %: Makefile
-	@cd $(SOURCEDIR) && $(CWD)/env/bin/sphinx-build -M $@ ./ "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@cd $(SOURCEDIR) && $(CWD)/env/bin/sphinx-build -M $@ ./ $(BUILDDIR) $(SPHINXOPTS) $(O)
+	@echo ::: $@ ::: | tr '[:lower:]' '[:upper:]'
