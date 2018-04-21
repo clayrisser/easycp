@@ -1,15 +1,17 @@
 {
   "name": "easycp",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Easy child process",
-  "homepage": "https://github.com/jamrizzi/easycp",
+  "homepage": "https://github.com/codejamninja/easycp",
   "author": {
     "name": "Jam Risser",
-    "email": "jam@jamrizzi.com",
-    "url": "https://jam.jamrizzi.com"
+    "email": "jam@codejam.ninja",
+    "url": "https://jam.codejam.ninja"
   },
   "main": "lib/index.js",
-  "files": ["lib"],
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "npm run clean && npm run test && babel src -d lib",
     "clean": "rm -rf lib",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "eslint": "^4.18.1",
@@ -33,7 +36,7 @@
     "jest": "^22.4.2"
   },
   "license": "MIT",
-  "repository": "https://github.com/jamrizzi/easycp",
+  "repository": "https://github.com/codejamninja/easycp",
   "babel": {
     "presets": [
       [
@@ -50,8 +53,14 @@
   "engines": {
     "node": ">= 4.0.0"
   },
-  "eslintIgnore": ["lib"],
+  "eslintIgnore": [
+    "lib",
+    "docs",
+    "env"
+  ],
   "jest": {
-    "testMatch": ["**/tests/**/*.js"]
+    "testMatch": [
+      "**/tests/**/*.js"
+    ]
   }
 }

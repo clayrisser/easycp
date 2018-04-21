@@ -1,12 +1,10 @@
 # easycp
 
-[![Beerpay](https://beerpay.io/jamrizzi/easycp/badge.svg?style=beer-square)](https://beerpay.io/jamrizzi/easycp)
-[![Beerpay](https://beerpay.io/jamrizzi/easycp/make-wish.svg?style=flat-square)](https://beerpay.io/jamrizzi/easycp?focus=wish)
-[![GitHub stars](https://img.shields.io/github/stars/jamrizzi/easycp.svg?style=social&label=Stars)](https://github.com/jamrizzi/easycp)
+[![GitHub stars](https://img.shields.io/github/stars/codejamninja/easycp.svg?style=social&label=Stars)](https://github.com/codejamninja/easycp)
 
-Easy child process
+> Easy child process
 
-Please &#9733; this repo if you found it useful &#9733; &#9733; &#9733;
+Please ★ this repo if you found it useful ★ ★ ★
 
 
 ## Features
@@ -51,36 +49,36 @@ readcp('echo hello world').then(result => console.log(result)); // hello world
 
 ## Support
 
-Submit an [issue](https://github.com/jamrizzi/easycp/issues/new)
+Submit an [issue](https://github.com/codejamninja/easycp/issues/new)
 
 
 ## Contributing
 
-Review the [guidelines for contributing](https://github.com/jamrizzi/easycp/blob/master/CONTRIBUTING.md)
+Review the [guidelines for contributing](https://github.com/codejamninja/easycp/blob/master/CONTRIBUTING.md)
 
 
 ## License
 
-[MIT License](https://github.com/jamrizzi/easycp/blob/master/LICENSE)
+[MIT License](https://github.com/codejamninja/easycp/blob/master/LICENSE)
 
-[Jam Risser](https://jam.jamrizzi.com) &copy; 2018
+[Jam Risser](https://codejam.ninja) © 2018
 
 
 ## Changelog
 
-Review the [changelog](https://github.com/jamrizzi/easycp/blob/master/CHANGELOG.md)
+Review the [changelog](https://github.com/codejamninja/easycp/blob/master/CHANGELOG.md)
 
 
 ## Credits
 
-* [Jam Risser](https://jam.jamrizzi.com) - Author
+* [Jam Risser](https://codejam.ninja) - Author
 
 
-## Support on Beerpay (actually, I drink coffee)
+## Support on Liberapay
 
-A ridiculous amount of coffee :coffee: :coffee: :coffee: was consumed in the process of building this project.
+A ridiculous amount of coffee ☕ ☕ ☕ was consumed in the process of building this project.
 
-[Add some fuel](https://beerpay.io/jamrizzi/easycp) if you'd like to keep me going!
+[Add some fuel](https://liberapay.com/codejamninja/donate) if you'd like to keep me going!
 
-[![Beerpay](https://beerpay.io/jamrizzi/easycp/badge.svg?style=beer-square)](https://beerpay.io/jamrizzi/easycp)
-[![Beerpay](https://beerpay.io/jamrizzi/easycp/make-wish.svg?style=flat-square)](https://beerpay.io/jamrizzi/easycp?focus=wish)
+[![Liberapay receiving](https://img.shields.io/liberapay/receives/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)
+[![Liberapay patrons](https://img.shields.io/liberapay/patrons/codejamninja.svg?style=flat-square)](https://liberapay.com/codejamninja/donate)

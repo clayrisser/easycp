@@ -1,4 +1,4 @@
-import easycp from '../src';
+import easycp from '~';
 
 easycp('yo')
   .then(result => {

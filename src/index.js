@@ -1,4 +1,5 @@
 import childProcess from 'child_process';
+import { REGEX_SPLIT_CMD } from '~/constants';
 
 const defaults = {
   stdout: true,
@@ -7,7 +8,7 @@ const defaults = {
   read: false
 };
 
-async function easycp(cmd = 'echo', args = [], options = {}) {
+function easycp(cmd = 'echo', args = [], options = {}) {
   if (options.read && !options.stdio) {
     options.stdio = 'pipe';
     if (options.stdout !== true) options.stdout = false;
@@ -27,13 +28,18 @@ async function easycp(cmd = 'echo', args = [], options = {}) {
     options.stdio = 'pipe';
   }
   if (cmd.indexOf(' ') > -1) {
-    const cmdArray = cmd.split(' ');
+    const cmdArray = cmd.match(REGEX_SPLIT_CMD).map(cmdItem => {
+      if (cmdItem.length && (cmdItem[0] === '"' || cmdItem[0] === "'")) {
+        return cmdItem.substr(1, cmdItem.length - 2);
+      }
+      return cmdItem;
+    });
     args = [...cmdArray.slice(1), ...args];
     [cmd] = cmdArray;
   }
-  return new Promise((resolve, reject) => {
+  const proc = childProcess.spawn(cmd, args, options);
+  const promise = new Promise((resolve, reject) => {
     try {
-      const proc = childProcess.spawn(cmd, args, options);
       let combinedOutput = '';
       if (proc.stdout) {
         proc.stdout.on('data', data => {
@@ -63,13 +69,17 @@ async function easycp(cmd = 'echo', args = [], options = {}) {
       return reject(err);
     }
   });
+  promise.process = proc;
+  promise.cmd = cmd;
+  promise.args = args;
+  return promise;
 }
 
-export async function readcp(cmd = 'echo', args = [], options = {}) {
+export function readcp(cmd = 'echo', args = [], options = {}) {
   return easycp(cmd, args, { ...options, read: true });
 }
 
-export async function silentcp(cmd = 'echo', args = [], options = {}) {
+export function silentcp(cmd = 'echo', args = [], options = {}) {
   return easycp(cmd, args, { ...options, stdio: false });
 }
 
