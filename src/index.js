@@ -9,6 +9,11 @@ const defaults = {
 };
 
 function easycp(cmd = 'echo', args = [], options = {}) {
+  if (typeof args === 'string') args = [args];
+  if (!Array.isArray(args)) {
+    options = args;
+    args = [];
+  }
   if (options.read && !options.stdio) {
     options.stdio = 'pipe';
     if (options.stdout !== true) options.stdout = false;
